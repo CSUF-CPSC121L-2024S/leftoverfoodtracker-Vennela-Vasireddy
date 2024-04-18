@@ -4,7 +4,8 @@
 // <Date>
 // <Your csu.fullerton.edu email>
 // <Your GitHub username>
-
+#include <iostream> 
+#include <vector>
 #include "leftover_report.h"
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement

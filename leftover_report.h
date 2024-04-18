@@ -7,7 +7,8 @@
 // <Date>
 // <Your csu.fullerton.edu email>
 // <Your GitHub username>
-
+#include <iostream> 
+#include <vector>
 class LeftoverReport {
     // ======================= YOUR CODE HERE =======================
      // Write the LeftoverReport class here. Refer to your class design for the

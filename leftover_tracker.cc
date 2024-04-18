@@ -6,6 +6,8 @@
 // <Your GitHub username>
 
 #include "leftover_tracker.h"
+#include <iostream> 
+#include <vector>
 
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement
@@ -19,3 +21,17 @@
 // to tell the compiler that each function belongs to the LeftoverTracker
 // class.
 // ===================================================================
+
+ bool LeftoverTracker::AddRecord(const LeftoverRecord &record)
+ {       
+      //    for (const LeftoverRecord& x: leftover_records_ )
+      //    {
+      //       if( x == record )
+      //       {
+      //             return false;
+      //       }
+      //    }
+         leftover_records_.push_back(record);
+         return true;
+
+ }
