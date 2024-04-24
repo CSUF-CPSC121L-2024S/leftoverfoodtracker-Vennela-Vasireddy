@@ -9,16 +9,42 @@
 // <Your GitHub username>
 #include <iostream> 
 #include <vector>
+#include "leftover_record.h"
+
 class LeftoverReport {
-    // ======================= YOUR CODE HERE =======================
-     // Write the LeftoverReport class here. Refer to your class design for the
-     // member variables, constructors, and member functions needed.
-     //
-     // Note: mark functions that do not modify the member variables
-     // as const, by writing `const` after the parameter list.
-     // Pass objects by const reference when appropriate.
-     // Remember that std::string is an object!
-     // ===============================================================
+ public:
+  LeftoverReport(){};
+  LeftoverReport(const std::vector<LeftoverRecord>& leftover_records)
+      : leftover_records_(leftover_records){};
+
+
+  std::vector<std::string> MostCommonlLeftover() const {
+    return most_common_leftover_;
+  }
+  std::vector<std::string> MostCostlyLeftoverProducingMeals() const {
+    return most_costly_leftover_producing_meals_;
+  }
+  double TotalCostOfLeftover() const { return total_cost_of_leftover_; }
+  std::vector<std::string> MostCommonLeftoverReasons() const {
+    return most_common_leftover_reasons_;
+  }
+  std::vector<std::string> MostCommonDisposalMechanisms() const {
+    return most_common_disposal_mechanism_;
+  }
+  std::vector<std::string> SuggestLeftoverReductionStrategies() const {
+    return suggest_leftover_reduction_strategies_;
+  }
+
+
+ private:
+  std::vector<LeftoverRecord> leftover_records_;
+  std::vector<std::string> most_common_leftover_;
+  std::vector<std::string> most_costly_leftover_producing_meals_;
+  double total_cost_of_leftover_;
+  std::vector<std::string> most_common_leftover_reasons_;
+  std::vector<std::string> most_common_disposal_mechanism_;
+  std::vector<std::string> suggest_leftover_reduction_strategies_;
 };
+
 
 #endif

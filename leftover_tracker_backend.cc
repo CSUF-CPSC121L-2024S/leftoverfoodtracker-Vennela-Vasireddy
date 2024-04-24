@@ -190,6 +190,7 @@ crow::json::wvalue LeftoverReportToCrowJSON(const LeftoverReport &report) {
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most common disposal mechanisms as a vector of strings. Store the
   // result in the vector declared above.
+  most_common_disposal_mechanisms = report.MostCommonDisposalMechanisms();
   report_json["most_common_disposal_mechanism_"] =
     most_common_disposal_mechanisms;
 
@@ -197,30 +198,35 @@ crow::json::wvalue LeftoverReportToCrowJSON(const LeftoverReport &report) {
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most common leftovers as a vector of strings. Store the result in
   // the vector declared above.
+  most_common_leftovers = report.MostCommonlLeftover();
   report_json["most_common_leftover_"] = most_common_leftovers;
 
   std::vector<std::string> most_common_leftover_reasons{};
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most commonwastage reasons as a vector of strings. Store the result in
   // the vector declared above.
+    most_common_leftover_reasons = report.MostCommonLeftoverReasons();
   report_json["most_common_leftover_reason_"] = most_common_leftover_reasons;
 
   std::vector<std::string> most_costly_leftover_producing_meals{};
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most costly waste producing meals as a vector of strings. Store the
   // result in the vector declared above.
+  most_costly_leftover_producing_meals = report.MostCostlyLeftoverProducingMeals();
   report_json["most_leftover_producing_meal_"] = most_costly_leftover_producing_meals;
 
   std::vector<std::string> suggested_strategies_to_reduce_leftover{};
   // TODO: Call the member function of LeftoverReport class that returns all
   // the suggested strategies as a vector of strings. Store the result in the
   // vector declared above.
+  suggested_strategies_to_reduce_leftover = report.SuggestLeftoverReductionStrategies();
   report_json["suggested_strategies_to_reduce_leftover_"] =
     suggested_strategies_to_reduce_leftover;
 
   double total_cost_of_leftover = -9999.0;
   // TODO: Call the member function of LeftoverReport class that returns the
   // total cost of leftovers as a double. Store the result in the double declared.
+  total_cost_of_leftover = report.TotalCostOfLeftover();
   report_json["total_cost_of_leftover_"] = total_cost_of_leftover;
 
   return report_json;

@@ -8,6 +8,7 @@
 #include "leftover_tracker.h"
 #include <iostream> 
 #include <vector>
+#include <algorithm> 
 
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement
@@ -38,6 +39,13 @@
         return false;
       }
     }
-    leftover_records_.push_back(record);
+     leftover_records_.push_back(record);
     return true;
   }
+
+LeftoverReport LeftoverTracker::GetLeftoverReport() const{
+
+  LeftoverReport report{leftover_records_};
+  return report;
+}
+  
