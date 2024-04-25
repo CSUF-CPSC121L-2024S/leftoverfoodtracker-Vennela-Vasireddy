@@ -6,6 +6,9 @@
 // <Your GitHub username>
 #include <iostream> 
 #include <vector>
+#include <map>
+#include <algorithm>
+
 #include "leftover_report.h"
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement
@@ -19,3 +22,5 @@
 // to tell the compiler that each function belongs to the LeftoverReport
 // class.
 // ===================================================================
+
+

@@ -192,7 +192,7 @@ crow::json::wvalue LeftoverRecordToCrowJSON(const LeftoverRecord &record) {
 
 // Util function to convert a LeftoverReport object into a serialized
 // JSON object.
-crow::json::wvalue LeftoverReportToCrowJSON(const LeftoverReport &report) {
+crow::json::wvalue LeftoverReportToCrowJSON(LeftoverReport &report) {
   crow::json::wvalue report_json({});
 
   std::vector<std::string> most_common_disposal_mechanisms{};
@@ -207,14 +207,14 @@ crow::json::wvalue LeftoverReportToCrowJSON(const LeftoverReport &report) {
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most common leftovers as a vector of strings. Store the result in
   // the vector declared above.
-  most_common_leftovers = report.MostCommonlLeftover();
+  most_common_leftovers = report.MostCommonLeftover();
   report_json["most_common_leftover_"] = most_common_leftovers;
 
   std::vector<std::string> most_common_leftover_reasons{};
   // TODO: Call the member function of LeftoverReport class that returns all
   // the most commonwastage reasons as a vector of strings. Store the result in
   // the vector declared above.
-    most_common_leftover_reasons = report.MostCommonLeftoverReasons();
+     most_common_leftover_reasons = report.MostCommonLeftoverReasons();
   report_json["most_common_leftover_reason_"] = most_common_leftover_reasons;
 
   std::vector<std::string> most_costly_leftover_producing_meals{};
@@ -406,11 +406,11 @@ crow::json::wvalue LeftoverTrackerBackend::GetRecords() const {
 }
 
 crow::json::wvalue LeftoverTrackerBackend::GetLeftoverReport() const {
-  LeftoverReport generated_report;
+  LeftoverReport generated_report = leftover_tracker_object.GetLeftoverReport();
   // TODO: Call the member function in the LeftoverTracker class, on the
   // member object that you added in leftover_tracker.h, that generates a
   // LeftoverReport object using all the LeftoverRecords and returns it.
   // Store the returned value in the `generated_report` object declared above.
-  
+   
   return LeftoverReportToCrowJSON(generated_report);
 }
