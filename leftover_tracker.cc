@@ -6,9 +6,10 @@
 // <Your GitHub username>
 
 #include "leftover_tracker.h"
-#include <iostream> 
+
+#include <algorithm>
+#include <iostream>
 #include <vector>
-#include <algorithm> 
 
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement
@@ -23,29 +24,25 @@
 // class.
 // ===================================================================
 
-
- bool LeftoverTracker::AddRecord(const LeftoverRecord &record) {
-    for (int i = 0; i < leftover_records_.size(); i++) {
-      if (leftover_records_.at(i).GetDate() == record.GetDate() &&
-          leftover_records_.at(i).GetMeal() == record.GetMeal() &&
-          leftover_records_.at(i).GetFoodName() == record.GetFoodName() &&
-          leftover_records_.at(i).GetQuantityInOz() ==
-              record.GetQuantityInOz() &&
-          leftover_records_.at(i).GetLeftoverReason() ==
-              record.GetLeftoverReason() &&
-          leftover_records_.at(i).GetDisposalMechanism() ==
-              record.GetDisposalMechanism() &&
-          leftover_records_.at(i).GetCost() == record.GetCost()) {
-        return false;
-      }
+bool LeftoverTracker::AddRecord(const LeftoverRecord &record) {
+  for (auto & leftover_record : leftover_records_) {
+    if (leftover_record.GetDate() == record.GetDate() &&
+        leftover_record.GetMeal() == record.GetMeal() &&
+        leftover_record.GetFoodName() == record.GetFoodName() &&
+        leftover_record.GetQuantityInOz() == record.GetQuantityInOz() &&
+        leftover_record.GetLeftoverReason() ==
+            record.GetLeftoverReason() &&
+        leftover_record.GetDisposalMechanism() ==
+            record.GetDisposalMechanism() &&
+        leftover_record.GetCost() == record.GetCost()) {
+      return false;
     }
-     leftover_records_.push_back(record);
-    return true;
   }
+  leftover_records_.push_back(record);
+  return true;
+}
 
-LeftoverReport LeftoverTracker::GetLeftoverReport() const{
-
+LeftoverReport LeftoverTracker::GetLeftoverReport() const {
   LeftoverReport report{leftover_records_};
   return report;
 }
-  

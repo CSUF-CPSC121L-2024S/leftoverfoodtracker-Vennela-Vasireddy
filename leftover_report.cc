@@ -4,12 +4,12 @@
 // <Date>
 // <Your csu.fullerton.edu email>
 // <Your GitHub username>
-#include <iostream> 
-#include <vector>
-#include <map>
-#include <algorithm>
-
 #include "leftover_report.h"
+
+#include <algorithm>
+#include <iostream>
+#include <map>
+#include <vector>
 // ========================= YOUR CODE HERE =========================
 // This implementation file is where you should implement
 // the member functions declared in the header (leftover_report.h), only
@@ -22,5 +22,3 @@
 // to tell the compiler that each function belongs to the LeftoverReport
 // class.
 // ===================================================================
-
-

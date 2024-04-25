@@ -1,9 +1,10 @@
 #ifndef LEFTOVER_TRACKER_BACKEND_H_
 #define LEFTOVER_TRACKER_BACKEND_H_
 
+#include <iostream>
 #include <string>
-#include <iostream> 
 #include <vector>
+
 #include "leftover_tracker.h"
 #include "server_utils/crow_all.h"
 
@@ -51,10 +52,9 @@ class LeftoverTrackerBackend {
   // format.
   const std::string &leftover_records_filepath_;
   // A top level class object to leftovers.
-  // TODO: Add a LeftoverTracker object as a member variable here. Make sure you stick
-  // to Google's style guide when naming your variable.
+  // TODO: Add a LeftoverTracker object as a member variable here. Make sure you
+  // stick to Google's style guide when naming your variable.
 
-  
-    LeftoverTracker leftover_tracker_object{};
+  LeftoverTracker leftover_tracker_object{};
 };
 #endif
