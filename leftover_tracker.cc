@@ -42,6 +42,23 @@ bool LeftoverTracker::AddRecord(const LeftoverRecord &record) {
   return true;
 }
 
+bool LeftoverTracker::DeleteRecord(const LeftoverRecord &record) {
+  for (auto it = leftover_records_.begin(); it != leftover_records_.end(); it++) {
+    if (it->GetDate() == record.GetDate() &&
+        it->GetMeal() == record.GetMeal() &&
+        it->GetFoodName() == record.GetFoodName() &&
+        it->GetQuantityInOz() == record.GetQuantityInOz() &&
+        it->GetLeftoverReason() == record.GetLeftoverReason() &&
+        it->GetDisposalMechanism() == record.GetDisposalMechanism() &&
+        it->GetCost() == record.GetCost()) {
+      leftover_records_.erase(it);
+      return true;
+    }
+  }
+  return false;
+}
+
+
 LeftoverReport LeftoverTracker::GetLeftoverReport() const {
   LeftoverReport report{leftover_records_};
   return report;
